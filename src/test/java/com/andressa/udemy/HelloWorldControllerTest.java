@@ -28,7 +28,7 @@ class HelloWorldControllerTest {
 
     @Test
     void testHelloResponse() {
-        final String result = client.toBlocking().retrieve("/hello");
+        final String result = client.toBlocking().retrieve("/helloFromConfig");
         assertEquals("Hello from service", result);
     }
 }
