@@ -3,11 +3,17 @@ package com.andressa.udemy;
 import io.micronaut.http.annotation.Controller;
 import io.micronaut.http.annotation.Get;
 
-@Controller("/hello")
+import javax.inject.Inject;
+
+@Controller("${hello.controller.path}")
 public class HelloWorldController {
+
+    @Inject
+    private  HelloWorldService service;
+
 
     @Get("/")
     public String index(){
-        return "Hello World";
+        return service.sayHi();
     }
 }
